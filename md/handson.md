@@ -120,11 +120,13 @@ Masterテーブルを確認してみよう
 
 ## SQLについて
 - Legacy SQL
+  - 従来からあるSQL構文
 - Standard SQL
+  - [Standard SQLの利点](https://cloud.google.com/bigquery/docs/reference/standard-sql/migrating-from-legacy-sql?hl=ja#advantages_of_standard_sql)
 
 Note:
-TODO 
-https://www.slideshare.net/kumanoryo/sqlbigquerystandard-sql
+WITH句でViewで作れたりユーザー定義関数が使えるようになった、一般的なSQL構文で実行できるようになった、DML文が使える。
+今から使うならStandardSQLの方が絶対良い。
 
 ---
 
@@ -224,7 +226,7 @@ ORDER BY yearID, kbb DESC
 
 ---
 
-### 2010-2016年の「チーム毎の30歳以下の選手のヒット合計数」と「チーム順位」を出してみよう
+### 2008-2016年の「チーム毎の30歳以下の選手のヒット合計数」と「チーム順位」を出してみよう
 * 難易度 ★★★
 * 参照するテーブル：Batting, Master, Team
   * 選手の生年月日はMasterテーブル
@@ -252,7 +254,7 @@ FROM(
     WHERE
       birthYear >= yearID - 30
     AND
-      yearID BETWEEN 2010 AND 2016
+      yearID BETWEEN 2008 AND 2016
     GROUP BY yearID, teamID
   ) AS bm
   LEFT OUTER JOIN(
@@ -392,10 +394,10 @@ https://datastudio.google.com/
 #### フィルタで絞り込んで AL × 東地区のデータを見てみよう
 * ヤンキース
   * 2009〜2012年まで 1位, 2位, 1位, 1位 と好調
-  * しかし若手のヒット数は2015年まで減少傾向
-* レッドソックス
-  * 順位の浮き沈みが激し目
-  * 最下位だった翌年は若手のヒット数が増える傾向
+  * しかし若手ヒット数は2015年まで減少傾向になった
+* オリオールズ
+  * 2011年まで最下位が続いていたが2014年には優勝
+  * 2011年から若手ヒット数が好調
 
 --
 
