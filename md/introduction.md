@@ -9,6 +9,7 @@ Created by Yui Takeuchi ( [@omohayui](https://twitter.com/omohayui) )
 
 Note:
 TODO
+
 ---
 
 # BigQuery とは？
@@ -69,9 +70,24 @@ Note:
 
 ## ハンズオンで使う用語など
 ![BigQueryまわりの用語](./img/bq_image.jpg)
+<small>https://cloud.google.com/bigquery/what-is-bigquery</small>
 
 Note:
-TODO 
+
+プロジェクトはGCPのトップレベルのコンテナ
+データセットはテーブルへのアクセス権限を制御できるグループ
+テーブルは実際にデータを入れるもの
+ジョブはユーザーが作成するアクション
+
+--
+
+|||
+|:---|:---|
+|プロジェクト|GCP のトップレベルのコンテナ|
+|データセット|テーブルへのアクセス権限を<br>制御できるグループ|
+|テーブル|実際にデータを入れるもの|
+|ジョブ|ユーザーが作成するアクション|
+
 ---
 
 ## BigQueryの料金体系について
