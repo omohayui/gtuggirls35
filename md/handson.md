@@ -20,7 +20,7 @@ NO  ▼
 
 プロジェクト名：「Analytics for MLB」  
 プロジェクトID ：「analytics-for-mlb」  
-<small>※ プロジェクトID は自動で作成されるが、編集することも可能</small>  
+<small>※ プロジェクトID はグローバルでユニークなので<br>「analytics-for-mlb-{name}」任意の文字列を追加してください</small>  
 ![](./img/handson_01.jpg)
 
 ---
@@ -67,6 +67,16 @@ NO  ▼
 
 ---
 
+#### アップロードするファイル
+1. baseballdatabank-2017.1.zip を解凍
+2. 解凍したファイル内の core フォルダ内のCSVから
+  - Master.csv - 選手のマスタ情報
+  - Batting.csv - 各年の打撃成績
+  - Pitching.csv - 各年の投手成績
+  - Teams.csv - 各年のチーム成績
+
+---
+
 ![](./img/handson_07.jpg)
 
 ---
@@ -88,16 +98,6 @@ NO  ▼
 「Repeat job」：Select Previous Job をクリックすると  
 前回の設定がセットされるので、  
 Choose File と Table Name だけ変更して作成できる
-
----
-
-#### アップロードするファイル
-1. baseballdatabank-2017.1.zip を解凍
-2. 解凍したファイル内の core フォルダ内のCSVから
-  - Master.csv - 選手のマスタ情報
-  - Batting.csv - 各年の打撃成績
-  - Pitching.csv - 各年の投手成績
-  - Teams.csv - 各年のチーム成績
 
 ---
 
