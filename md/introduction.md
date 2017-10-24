@@ -7,8 +7,35 @@ Created by Yui Takeuchi ( [@omohayui](https://twitter.com/omohayui) )
 
 # 自己紹介てきな何か
 
+![](./img/kawauso_300.png)
+
+--
+
+## Yui Takeuchi
+- SoftwareEngineer@DeNA
+- ホンノチョットデキル
+  - FrontEnd (js,html5,sass)
+  - ServerSide (Golang,Perl,PHP)
+  - Infra (GCP系,Linux系,MySQL,Oracle)
+- 好きなチーム：千葉ロッテマリーンズ
+- 好きな選手：福浦和也
+
+--
+
+## Important
+ただの野球好きなので分析素人です！
+![パッカソン](./img/packathon.jpg)
+
+--
+
+## PR
+<a href="https://www.andapp.jp" target="_blank">
+  <img src="https://www.andapp.jp/static/img/common/ogp/facebook.png">
+</a>
+
 Note:
-TODO
+宣伝：去年立ち上げたPCゲームプラットフォーム
+スマホゲームがPCで遊べる
 
 ---
 
