@@ -238,12 +238,13 @@ Note: アメリカン・リーグ、ナショナル・リーグそれぞれに�
 
 #### Query例
 ```sql
+#standardSQL
 SELECT
   bm.yearID AS year, t.lgID AS league, t.divID AS division, t.name AS team, bm.totalHit AS totalHitU30, t.rank AS rank
 FROM(
   (
     SELECT
-      yearID, teamID, SUM(H) AS totalHit 
+      yearID, teamID,lgID, SUM(H) AS totalHit 
     FROM `analytics-for-mlb.mlb_data.Batting` as b
     JOIN(
       SELECT
