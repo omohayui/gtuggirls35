@@ -177,7 +177,7 @@ FROM `analytics-for-mlb.mlb_data.Master` LIMIT 1000
 SELECT yearID, lgID, teamID, SUM(HR) as totalHR 
 FROM `analytics-for-mlb.mlb_data.Batting`
 WHERE yearID BETWEEN 2010 AND 2016
-GROUP BY yearID, teamID
+GROUP BY yearID, lgID, teamID
 ORDER BY yearID, lgID, totalHR
 ```
 
@@ -202,8 +202,8 @@ Note:
 -- K/BB
 SELECT
   yearID,
-  CONCAT(nameFirst, " ", nameLast) AS name,
-  CASE WHEN BB = 0 THEN 0 ELSE SO/BB END AS kbb 
+  CONCAT(nameFirst, " ", nameLast) AS name, -- 選手指名
+  CASE WHEN BB = 0 THEN 0 ELSE SO/BB END AS kbb -- 0で割るとエラーになるので 0 のときは割らずに 0
 FROM `analytics-for-mlb.mlb_data.Pitching` AS p
 LEFT OUTER JOIN(
   SELECT
@@ -244,21 +244,23 @@ SELECT
 FROM(
   (
     SELECT
-      yearID, teamID,lgID, SUM(H) AS totalHit 
+      yearID, teamID, SUM(H) AS totalHit -- 合計ヒット数
     FROM `analytics-for-mlb.mlb_data.Batting` as b
     JOIN(
+      -- Masterテーブルから選手の生年月日を取得
       SELECT
         birthYear, playerID
       FROM `analytics-for-mlb.mlb_data.Master`
     ) AS m
     ON b.playerID = m.playerID
     WHERE
-      birthYear >= yearID - 30
+      birthYear >= yearID - 30 -- 30歳以下
     AND
       yearID BETWEEN 2008 AND 2016
     GROUP BY yearID, teamID
   ) AS bm
   LEFT OUTER JOIN(
+    -- Teamsテーブルからチーム名とチーム順位を取得
     SELECT
       name, rank, lgID, divID, teamID, yearID
     FROM `analytics-for-mlb.mlb_data.Teams`
